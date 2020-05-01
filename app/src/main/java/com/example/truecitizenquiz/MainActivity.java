@@ -9,6 +9,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button falseButton;
@@ -16,13 +18,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView questionTextView;
     private ImageButton nextButton;
     private int i = 0;
+    private GifImageView gif;
 
     private Question[] questionBank = new Question[] {
             new Question(R.string.jordan_team, true),
             new Question(R.string.lebron_lost, true),
             new Question(R.string.championship_2019, false),
             new Question(R.string.most_championships, false),
-            new Question(R.string.most_points, true)
+            new Question(R.string.most_points, true),
     };
 
     @Override
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         trueButton = findViewById(R.id.true_button);
         questionTextView = findViewById(R.id.anwser_text_view);
         nextButton = findViewById(R.id.next_button);
+        gif = findViewById(R.id.gif_image);
 
         // Here we had to implement onClickListener Interface by clicking on highlighted THIS
         falseButton.setOnClickListener(this); // this = class MainActivity
@@ -48,9 +52,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.false_button:
                 checkAnswer(false);
+                // gifImage dunkfail
+
                 break;
             case R.id.true_button:
                 checkAnswer(true);
+                // gifImage jordandunk
+
                 break;
             case R.id.next_button:
                 // go to the next question
@@ -69,8 +77,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             if (userChoose == answerIsTrue) {
                 toastMessageId = R.string.correct_answer;
+                gif.setImageResource(R.drawable.jordandunkgif);
             }else {
                 toastMessageId = R.string.wrong_answer;
+                gif.setImageResource(R.drawable.dunkfaillonggif);
             }
 
             Toast.makeText(MainActivity.this, toastMessageId,
