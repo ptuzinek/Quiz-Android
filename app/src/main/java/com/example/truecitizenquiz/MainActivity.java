@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         nextButton = findViewById(R.id.next_button);
         gif = findViewById(R.id.gif_image);
 
-        // Here we had to implement onClickListener Interface by clicking on highlighted THIS
         falseButton.setOnClickListener(this); // this = class MainActivity
         trueButton.setOnClickListener(this);  // register our buttons to listen to click events
         nextButton.setOnClickListener(this);
@@ -52,12 +51,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.false_button:
                 checkAnswer(false);
-                // gifImage dunkfail
 
                 break;
             case R.id.true_button:
                 checkAnswer(true);
-                // gifImage jordandunk
 
                 break;
             case R.id.next_button:

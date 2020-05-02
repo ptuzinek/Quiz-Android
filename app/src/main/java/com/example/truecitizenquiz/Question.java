@@ -1,8 +1,7 @@
 package com.example.truecitizenquiz;
 
 public class Question {
-    private int answerResID; // represents each answer ID. Every resource has his own int ID.
-                             // That ID we're going to be holding in this variable.
+    private int answerResID;
     private boolean answerTrue;
 
     public Question(int answerResID, boolean answerTrue) {
