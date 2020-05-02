@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         nextButton = findViewById(R.id.next_button);
         gif = findViewById(R.id.gif_image);
 
-        falseButton.setOnClickListener(this); // this = class MainActivity
-        trueButton.setOnClickListener(this);  // register our buttons to listen to click events
+        falseButton.setOnClickListener(this);
+        trueButton.setOnClickListener(this);
         nextButton.setOnClickListener(this);
     }
 
